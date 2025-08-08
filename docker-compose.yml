@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:////data/ads.db
+    user: "1000:1000"
